@@ -14,14 +14,6 @@ Path planning for Unmanned Aerial Vehicles (UAVs) requires temporal coordination
   * **Energy-Aware Cost Function:** Trajectory optimization that penalizes vertical ascent to simulate realistic battery constraints.
   * **CSP-Based Scheduling:** Staggered departure times to optimize traffic flow and reduce congestion at mission start.
 
-## Software Architecture
-
-The system utilizes an object-oriented design for modularity:
-
-  * **GridEnvironment:** Manages spatial occupancy and boundary conditions.
-  * **DynamicObstacle:** Models moving threats with time-dependent position functions.
-  * **Path Planning Module:** Contains the core search logic for both static 3D and dynamic 4D domains.
-  * **Visualization Module:** Generates 3D plots and animated outputs for mission review.
 
 ## Installation
 
@@ -44,7 +36,7 @@ This project is optimized for Google Colab or local Python 3.x environments.
 
 ### Baseline Static Case
 
-The baseline implementation establishes core spatial search logic. It optimizes paths based on Euclidean distance while accounting for vertical movement penalties ($+0.5 \times \Delta z$).
+The baseline implementation plans for core spatial search logic. It optimizes paths based on Euclidean distance while accounting for vertical movement penalties ($+0.5 \times \Delta z$).
 
 ### Dynamic Space-Time Case
 
@@ -53,7 +45,9 @@ The dynamic implementation expands the search space to $(x, y, z, t)$. This allo
 ## Simulation Results
 
 The following animation demonstrates the coordinated mission planning for multiple UAVs. The paths are calculated to avoid both the static environment blocks and the trajectories of other agents.
-
+<p align="center">
+  <img src="simulation/multi_uav_simulation_dynamic_obstacles.gif" width="600" />
+</p>
 
 ## Contributors (Team A)
 
@@ -62,6 +56,3 @@ The following animation demonstrates the coordinated mission planning for multip
   * Magizhan V
   * Sudeep Prajapati
 
-## License
-
-This project is developed for academic purposes as part of the Aerospace and Mechanical Engineering curriculum.
